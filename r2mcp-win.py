@@ -3,7 +3,6 @@ from datetime import datetime, timedelta
 from mcp.server.fastmcp import FastMCP
 
 import asyncio
-import os
 import r2pipe
 
 mcp = FastMCP("r2mcp-win")
