@@ -1,6 +1,5 @@
 from copilot import CopilotClient
 from datetime import datetime, timedelta
-from langchain_community.utilities import SQLDatabase
 from mcp.server.fastmcp import FastMCP
 
 import asyncio
