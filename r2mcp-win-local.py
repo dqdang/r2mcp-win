@@ -3,6 +3,7 @@ from mcp.server.fastmcp import FastMCP
 
 import aiohttp
 import asyncio
+import r2pipe
 
 mcp = FastMCP("r2mcp-win")
 
