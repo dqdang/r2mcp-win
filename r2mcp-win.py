@@ -2,7 +2,6 @@ from copilot import CopilotClient
 from datetime import datetime, timedelta
 from langchain_community.utilities import SQLDatabase
 from mcp.server.fastmcp import FastMCP
-# from fastmcp import FastMCP
 
 import asyncio
 import os
@@ -81,7 +80,6 @@ async def extract_file(llm, session, question):
 
     return response[0] if response else ""
 
-# @mcp.tool
 @mcp.tool()
 async def answer_database_question(question):
     llm, session = await create_llm()
@@ -91,7 +89,6 @@ async def answer_database_question(question):
     return result
 
 def main():
-    # Uses stdio transport by default
     mcp.run(transport="stdio")
 
 if __name__ == "__main__":
