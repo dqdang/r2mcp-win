@@ -1,4 +1,4 @@
-from creds import base_url
+from creds import base_url, token
 from mcp.server.fastmcp import FastMCP
 
 import aiohttp
@@ -15,7 +15,10 @@ async def r2_ai_send(prompt):
         "input": prompt,
         "stream": False
     }
-    headers = {"Content-Type": "application/json"}
+    headers = {
+        "Authorization": "Bearer {}".format(token),
+        "Content-Type": "application/json"
+    }
 
     async with aiohttp.ClientSession() as session:
         async with session.post(url, json=payload, headers=headers) as response:
