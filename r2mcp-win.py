@@ -36,11 +36,11 @@ async def stop_llm(llm, session):
 
 def run_r2pipe(extracted_file):
     response = ""
-    r2 = r2pipe.open("/bin/ls")
+    r2 = r2pipe.open(extracted_file, radare2home=r"C:\git\radare2-6.0.8-w64\bin")
     r2.cmd('aa')
     response += r2.cmd("afl")
-    response += r2.cmdj("aflj")            # evaluates JSONs and returns an object
-    response += r2.cmdj("ij").core.format  # shows file format
+    response += str(r2.cmdj("aflj")[0])            # evaluates JSONs and returns an object
+    response += " " + r2.cmdj("ij")['core']['format']    # shows file format
     r2.quit()
     return response
 
